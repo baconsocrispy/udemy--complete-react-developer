@@ -4,16 +4,21 @@ import ReactDOM from 'react-dom/client';
 // import React Router 
 import { BrowserRouter } from 'react-router-dom';
 
-import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import { UserProvider } from './contexts/user.context';
+
+import './index.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* wrap entire app in the browser router */}
     <BrowserRouter>
-      <App />
+      <UserProvider>
+        <App />
+      </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
