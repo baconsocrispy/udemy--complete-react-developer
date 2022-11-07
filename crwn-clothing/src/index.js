@@ -8,6 +8,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import { UserProvider } from './contexts/user.context';
+import { ProductsProvider } from './contexts/products.context';
+import { CartProvider } from './contexts/cart.context';
 
 import './index.scss';
 
@@ -17,7 +19,11 @@ root.render(
     {/* wrap entire app in the browser router */}
     <BrowserRouter>
       <UserProvider>
-        <App />
+        <ProductsProvider>
+          <CartProvider>
+            <App />
+          </CartProvider>
+        </ProductsProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
